@@ -5,6 +5,9 @@ parameters:
     type: boolean
     default: false
     displayName: Run CI Build
+variables:
+  - name: skipPublishArtifacts
+    value: true
     
 resources:
   repositories:
