@@ -16,7 +16,7 @@ resources:
     type: github	  
 
 extends:
-  template: pipelines/build-deploy-base.yaml@base
+  template: pipelines/build-deploy-base.yaml@repo1
   parameters:
     runCI: ${{ parameters.runCI }}
     skipPublishArtifacts: ${{ variables.skipPublishArtifacts }}
