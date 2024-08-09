@@ -1,0 +1,22 @@
+name: testpipeline
+
+parameters:
+  - name: runCI
+    type: boolean
+    default: false
+    displayName: Run CI Build
+    
+resources:
+  repositories:
+  - repository: repo1
+    endpoint: anwar095
+    trigger: none
+    name: anwar095/JenkinsPipelines
+    ref: 'refs/heads/main'
+    type: github	  
+
+extends:
+  template: pipelines/build-deploy-base.yaml@base
+  parameters:
+    runCI: ${{ parameters.runCI }}
+    skipPublishArtifacts: ${{ variables.skipPublishArtifacts }}
